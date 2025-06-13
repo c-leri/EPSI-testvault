@@ -1,0 +1,10 @@
+services:
+  database:
+    image: mariadb:11.8
+    ports:
+      - "3306:3306"
+    environment:
+      - "MARIADB_RANDOM_ROOT_PASSWORD=true"
+      - "MARIADB_DATABASE=testvault"
+      - "MARIADB_USER=<USERNAME>"
+      - "MARIADB_PASSWORD=<PASSWORD>"

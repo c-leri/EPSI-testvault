@@ -2,17 +2,22 @@
 
 ## Setup
 
-Start mariadb and create a testvault database with its associated user (or use the given docker compose file).
+Start vault/bao and mariadb and create a testvault database with its associated user (or use the given docker compose file).
 
-Fill in the database connection information in the `src/resources/application.yml` file:
+Store the database connection information in vault/bao:
+
+```shell
+bao kv put secret/testvault DATABASE_HOST=<HOST> DATABASE_PORT=<PORT> DATABASE_USER=<USER> DATABASE_PASS=<PASS>
+```
+
+Add the vault/bao token in the `src/resources/application.yml` file:
 
 ```yaml
 spring:
   # ...
-  datasource:
-    url: jdbc:mariadb://localhost:3306/testvault
-    username: <USERNAME>
-    password: <PASSWORD>
+  cloud.vault:
+      # ...
+      token: <TOKEN>
   # ...
 ```
 

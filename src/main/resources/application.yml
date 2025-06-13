@@ -3,10 +3,16 @@ spring:
 
   main.web-application-type: none
 
+  cloud.vault:
+    uri: http://localhost:8200
+    token: <TOKEN>
+
+  config.import: vault://
+
   datasource:
-    url: jdbc:mariadb://localhost:3306/testvault
-    username: <USERNAME>
-    password: <PASSWORD>
+    url: jdbc:mariadb://${DATABASE_HOST}:${DATABASE_PORT}/testvault
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASS}
 
   jpa:
     database-platform: org.hibernate.dialect.MariaDBDialect

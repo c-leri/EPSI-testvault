@@ -6,5 +6,9 @@ services:
     environment:
       - "MARIADB_RANDOM_ROOT_PASSWORD=true"
       - "MARIADB_DATABASE=testvault"
-      - "MARIADB_USER=<USERNAME>"
-      - "MARIADB_PASSWORD=<PASSWORD>"
+      - "MARIADB_USER=<USER>"
+      - "MARIADB_PASSWORD=<PASS>"
+  vault:
+    image: openbao/openbao:2.2
+    ports:
+      - "8200:8200"

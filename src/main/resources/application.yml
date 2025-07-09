@@ -1,8 +1,6 @@
 spring:
   application.name: testvault
 
-  main.web-application-type: none
-
   cloud.vault:
     uri: http://localhost:8200
     token: <TOKEN>
@@ -16,4 +14,4 @@ spring:
 
   jpa:
     database-platform: org.hibernate.dialect.MariaDBDialect
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: update

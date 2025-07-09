@@ -1,6 +1,6 @@
 package net.celeri.testvault.models
 
-open class Livre(
+class Livre(
     val id: Int,
     titre: String,
 ) : LivreUpdate(titre)

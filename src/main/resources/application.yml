@@ -1,3 +1,8 @@
+app:
+  base-user:
+    username: ${TESTVAULT_USERNAME:root}
+    password: ${TESTVAULT_PASSWORD:#{null}}
+
 spring:
   application.name: testvault
 
